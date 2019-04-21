@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ListproductComponent } from './listproduct/listproduct.component';
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from "@angular/common/http";
+import {productService} from "./home/productsservice/productService";
 
 @NgModule({
   declarations: [
-    AppComponent,
     AddproductComponent,
     ListproductComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [productService],
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
